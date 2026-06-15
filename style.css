@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Science Gothic';
-    src: local('Science Gothic'), url(../fonts/ScienceGothic-Regular.woff2) format("woff2");
+    src: local('Science Gothic'), url(./ScienceGothic-Regular.woff2) format("woff2");
     font-weight: 100 900;
     font-style: normal;
     font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'Stalinist One';
-    src: local('Stalinist One'), local('Stalinist One Regular'), url(../fonts/StalinistOne-Regular.woff2) format("woff2");
+    src: local('Stalinist One'), local('Stalinist One Regular'), url(./StalinistOne-Regular.woff2) format("woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
