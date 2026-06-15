@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Science Gothic';
+    src: local('Science Gothic'), url(../fonts/ScienceGothic-Regular.woff2) format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Stalinist One';
+    src: local('Stalinist One'), local('Stalinist One Regular'), url(../fonts/StalinistOne-Regular.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+html {
+    font-family: 'Science Gothic';
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 400px;
+    border: 2px solid;
+    border-radius: 20px;
+    overflow: auto;
+    box-shadow: 8px 10px 10px yellow;
+    background: linear-gradient(135deg, rgb(254, 172, 94) 5%, rgb(199, 121, 208) 50%, rgb(75, 192, 200) 95%);
+}
+
+.img {
+    width: 100%;
+}
+
+p {
+    text-shadow: 3px 5px 5px yellow;
+}
+
+.button {
+    transition: box-shadow 2s;
+    background: linear-gradient(135deg, rgb(254, 172, 94) 5%, rgb(199, 121, 208) 50%, rgb(75, 192, 200) 95%);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.button:hover {
+    box-shadow: 3px 5px 5px violet;
+}
