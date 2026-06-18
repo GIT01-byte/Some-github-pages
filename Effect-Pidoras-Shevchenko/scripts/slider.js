@@ -14,6 +14,10 @@ sliderItems.forEach(function (slide, index) {
 
   // Добавляем data атрибут active для первого слайда / активного слайда
   sliderItems[0].setAttribute("data-active", "");
+
+  slide.addEventListener("click", function () {
+    showNextSlide("next");
+  });
 });
 
 btnNext.onclick = function () {

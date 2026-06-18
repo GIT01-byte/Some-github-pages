@@ -7,6 +7,8 @@
 html {
     font-family: "Caveat", sans-serif;
     font-weight: 400;
+    scroll-behavior: smooth;
+    overflow: hidden;
 }
 
 .container {
@@ -40,5 +42,5 @@ button:hover {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
