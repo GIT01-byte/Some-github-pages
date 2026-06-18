@@ -1,0 +1,50 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.hero__top {
+    flex: 0 0 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__title {}
+
+.title {}
+
+.hero__description {}
+
+.description__text {}
+
+.title__text {}
+
+.description__text {}
+
+.hero__conclusion {}
+
+.conclusion__title {}
+
+.conclusion__text {}
+
+.hero__bottom {
+    flex: 0 0 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.btnPrev {}
+
+.btnNext {}

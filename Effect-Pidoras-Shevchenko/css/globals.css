@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Caveat", sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+    transition-duration: 0.2s;
+}
+
+a:hover,
+button:hover {
+    color: #3596ED;
+}
+
+.hidden {
+    display: none;
+}
