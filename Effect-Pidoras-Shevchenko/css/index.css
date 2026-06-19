@@ -30,32 +30,17 @@
     align-items: center;
     gap: 20px;
 }
-.slide-1 {
 
-}
-.slide-2 {
-}
-.slide-2-img {
-}
 .text--medium {
     font-size: clamp(20px, 4vw, 35px);
     font-weight: 400;
     letter-spacing: 0.04em;
 }
-.slide-3 {
-}
-.slide-4 {
-}
+
 .hero__bottom {
     flex: 0 0 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-}
-
-.btnPrev {
-}
-
-.btnNext {
 }
