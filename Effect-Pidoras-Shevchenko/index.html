@@ -1,173 +1,146 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- Основные SEO теги -->
-    <title>
-      Эффект «Пидораса Шевченко»: Психология восприятия и коммуникации
-    </title>
-    <meta
-      name="description"
-      content="Узнайте, почему люди слышат только то, что хотят. Подробный разбор эффекта «Пидораса Шевченко», когнитивных искажений и способов эффективного донесения мыслей."
-    />
-    <meta
-      name="keywords"
-      content="эффект Пидораса Шевченко, психология общения, когнитивные искажения, восприятие информации, эффективная коммуникация"
-    />
-    <meta name="author" content="Джейн Доу" />
-    <link
-      rel="canonical"
-      href="https://git01-byte.github.io/Some-github-pages/Effect-Pidoras-Shevchenko/index.html"
-    />
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLJ7R2KTBC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <!-- Open Graph (Facebook, Telegram, WhatsApp, VK) -->
-    <meta
-      property="og:title"
-      content="Эффект «Пидораса Шевченко»: почему мы слышим только то, что нам интересно"
-    />
-    <meta
-      property="og:description"
-      content="Разбираем феномен восприятия: как наш мозг фильтрует входящую информацию и как с этим бороться."
-    />
-    <meta property="og:type" content="article" />
-    <meta
-      property="og:url"
-      content="https://git01-byte.github.io/Some-github-pages/Effect-Pidoras-Shevchenko/index.html"
-    />
-    <meta
-      property="og:image"
-      content="https://git01-byte.github.io/Some-github-pages/Effect-Pidoras-Shevchenko/images/slide-img-01-9-16.webp"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:locale" content="ru_RU" />
+    gtag('config', 'G-JLJ7R2KTBC');
+  </script>
 
-    <!-- Дополнительно: Тема для мобильных браузеров -->
-    <meta name="theme-color" content="#ffffff" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <!-- CSS, JS, Favicon подключения -->
-    <script src="./scripts/slider.js" defer></script>
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/fonts.css" />
-    <link rel="stylesheet" href="./css/globals.css" />
-    <link rel="stylesheet" href="./css/index.css" />
-    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
-  </head>
+  <!-- Основные SEO теги -->
+  <title>
+    Эффект «Пидораса Шевченко»: Психология восприятия и коммуникации
+  </title>
+  <meta name="description"
+    content="Узнайте, почему люди слышат только то, что хотят. Подробный разбор эффекта «Пидораса Шевченко», когнитивных искажений и способов эффективного донесения мыслей." />
+  <meta name="keywords"
+    content="эффект Пидораса Шевченко, психология общения, когнитивные искажения, восприятие информации, эффективная коммуникация" />
+  <meta name="author" content="Джейн Доу" />
+  <link rel="canonical" href="https://git01-byte.github.io/Some-github-pages/Effect-Pidoras-Shevchenko/index.html" />
 
-  <body>
-    <main class="main">
-      <section class="hero container">
-        <div class="hero__top">
-          <div class="slider" id="slider">
-            <div class="slide slide-1">
-              <h1 class="visually-hidden">
-                Эффект «Пидораса Шевченко»: психология избирательного восприятия
-              </h1>
-              <picture>
-                <source
-                  media="(orientation: landscape)"
-                  srcset="./images/slide-img-01-16-9.webp"
-                />
+  <!-- Open Graph (Facebook, Telegram, WhatsApp, VK) -->
+  <meta property="og:title" content="Эффект «Пидораса Шевченко»: почему мы слышим только то, что нам интересно" />
+  <meta property="og:description"
+    content="Разбираем феномен восприятия: как наш мозг фильтрует входящую информацию и как с этим бороться." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url"
+    content="https://git01-byte.github.io/Some-github-pages/Effect-Pidoras-Shevchenko/index.html" />
+  <meta property="og:image"
+    content="https://git01-byte.github.io/Some-github-pages/Effect-Pidoras-Shevchenko/images/slide-img-01-9-16.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="ru_RU" />
 
-                <img
-                  src="./images/slide-img-01-9-16.webp"
-                  alt="Мем «Фильтр восприятия»: схема передачи информации превращается в грязь и слово «ПИДОРАС». Иллюстрация эффекта выборочного внимания."
-                  class="slide-1-img"
-                />
-              </picture>
-            </div>
-            <div class="slide slide-2">
-              <h2 class="visually-hidden">
-                Почему люди слышат только то, что хотят
-              </h2>
-              <p class="text--medium">
-                Если человек умный, то он возьмет все и сделает свой вывод, а
-                если человек тупое недоразвитие жирное вонючее благоуханно
-                мутировавшие из плесени и фенилкетонурного наследства имбецил,
-                то он выявит лишь малую часть, в которой есть что то смешное и
-                сложит в одно тупое творение.
-              </p>
-              <picture>
-                <source
-                  media="(orientation: landscape)"
-                  srcset="./images/slide-img-02-16-9.webp"
-                />
+  <!-- Дополнительно: Тема для мобильных браузеров -->
+  <meta name="theme-color" content="#ffffff" />
 
-                <img
-                  src="./images/slide-img-02-9-16.webp"
-                  alt="Картинка, показывающая два типа слушателей лекции. Женщина слева увлеченно пишет конспект, мысленно соединяя идеи сетью понятий. Мужчина справа улыбается, глядя в телефон, а его сознание заполнено эмоциями и смайликами. Так художник показал разные способы воспринимать информацию."
-                  class="slide-2-img"
-                />
-              </picture>
-            </div>
-            <div class="slide slide-3">
-              <h2 class="visually-hidden">
-                Примеры когнитивных искажений в коммуникации
-              </h2>
-              <picture>
-                <source
-                  media="(orientation: landscape)"
-                  srcset="./images/slide-img-03-16-9.webp"
-                />
-                <source
-                  media="(orientation: portrait)"
-                  srcset="./images/slide-img-03-9-16.webp"
-                />
+  <!-- CSS, JS, Favicon подключения -->
+  <script src="./scripts/slider.js" defer></script>
+  <link rel="stylesheet" href="./css/normalize.css" />
+  <link rel="stylesheet" href="./css/fonts.css" />
+  <link rel="stylesheet" href="./css/globals.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+</head>
 
-                <img
-                  src="./images/slide-img-03-1-1.webp"
-                  alt="Комикс о двух сотрудниках. Руководитель кричит: «Вы устроили винегрет в базе?! Клиенты уйдут!» Максим (слева) думает о сбоях базы данных и экстренной инициализации резервной копии. Кирилл (справа) представляет банкет с компотом, тыквой и клоунами. Один решает проблему, другой заказывает рецепт домашнего вина."
-                  class="slide-3-img"
-                />
-              </picture>
-              <p class="text--medium">
-                Эффект Пидораса Шевченко - это эффект, суть которого кроется в
-                названии. Большинство из вас, прочитав этот эффект, посмеялись
-                со слова Пидорас, и запомнили его - эти люди мыслят больше о
-                том, что их интересует, при этом не улавливая всей сути. Эффект
-                гласит, что чтобы ты не разъяснял человек запомнит лишь часть,
-                которая ему интересна.
-              </p>
-            </div>
-            <div class="slide slide-4">
-              <h2 class="visually-hidden">
-                Заключение: как эффективно доносить свои мысли
-              </h2>
-              <picture>
-                <source
-                  media="(orientation: landscape)"
-                  srcset="./images/slide-img-04-16-9.webp"
-                />
+<body>
+  <main class="main">
+    <section class="hero container">
+      <div class="hero__top">
+        <div class="slider" id="slider">
+          <div class="slide slide-1">
+            <h1 class="visually-hidden">
+              Эффект «Пидораса Шевченко»: психология избирательного восприятия
+            </h1>
+            <picture>
+              <source media="(orientation: landscape)" srcset="./images/slide-img-01-16-9.webp" />
 
-                <img
-                  src="./images/slide-img-04-9-16.webp"
-                  alt="Четырехпанельный комикс, иллюстрирующий, как разные люди воспринимают, структурируют, путают или реагируют на одну и ту же информацию и идеи."
-                  class="slide-4-img"
-                />
-              </picture>
-              <p class="text--medium">
-                В итоге хотим сказать: каждый человек — это отдельная личность.
-                Мы все по-своему уникальны, и у нас у всех есть собственное
-                понятие этого мира. Если мы что-то хотим донести окружающим, то
-                мы должны уметь подстроиться, чтобы все поняли нашу идею. Однако
-                не всем можно угодить: кто-то запомнит всё и сделает правильный
-                итог, а кто-то конченый дебил и соберет гоголь-моголь из того,
-                что из услышанного ему понравилось. Именно поэтому, дорогие
-                пользователи, просим вас: не тратьте, сука, силы на тех, кто вас
-                не хочет понимать, сосредоточьтесь на тех, кто вас реально
-                ценит.
-              </p>
-            </div>
+              <img src="./images/slide-img-01-9-16.webp"
+                alt="Мем «Фильтр восприятия»: схема передачи информации превращается в грязь и слово «ПИДОРАС». Иллюстрация эффекта выборочного внимания."
+                class="slide-1-img" />
+            </picture>
+          </div>
+          <div class="slide slide-2">
+            <h2 class="visually-hidden">
+              Почему люди слышат только то, что хотят
+            </h2>
+            <p class="text--medium">
+              Если человек умный, то он возьмет все и сделает свой вывод, а
+              если человек тупое недоразвитие жирное вонючее благоуханно
+              мутировавшие из плесени и фенилкетонурного наследства имбецил,
+              то он выявит лишь малую часть, в которой есть что то смешное и
+              сложит в одно тупое творение.
+            </p>
+            <picture>
+              <source media="(orientation: landscape)" srcset="./images/slide-img-02-16-9.webp" />
+
+              <img src="./images/slide-img-02-9-16.webp"
+                alt="Картинка, показывающая два типа слушателей лекции. Женщина слева увлеченно пишет конспект, мысленно соединяя идеи сетью понятий. Мужчина справа улыбается, глядя в телефон, а его сознание заполнено эмоциями и смайликами. Так художник показал разные способы воспринимать информацию."
+                class="slide-2-img" />
+            </picture>
+          </div>
+          <div class="slide slide-3">
+            <h2 class="visually-hidden">
+              Примеры когнитивных искажений в коммуникации
+            </h2>
+            <picture>
+              <source media="(orientation: landscape)" srcset="./images/slide-img-03-16-9.webp" />
+              <source media="(orientation: portrait)" srcset="./images/slide-img-03-9-16.webp" />
+
+              <img src="./images/slide-img-03-1-1.webp"
+                alt="Комикс о двух сотрудниках. Руководитель кричит: «Вы устроили винегрет в базе?! Клиенты уйдут!» Максим (слева) думает о сбоях базы данных и экстренной инициализации резервной копии. Кирилл (справа) представляет банкет с компотом, тыквой и клоунами. Один решает проблему, другой заказывает рецепт домашнего вина."
+                class="slide-3-img" />
+            </picture>
+            <p class="text--medium">
+              Эффект Пидораса Шевченко - это эффект, суть которого кроется в
+              названии. Большинство из вас, прочитав этот эффект, посмеялись
+              со слова Пидорас, и запомнили его - эти люди мыслят больше о
+              том, что их интересует, при этом не улавливая всей сути. Эффект
+              гласит, что чтобы ты не разъяснял человек запомнит лишь часть,
+              которая ему интересна.
+            </p>
+          </div>
+          <div class="slide slide-4">
+            <h2 class="visually-hidden">
+              Заключение: как эффективно доносить свои мысли
+            </h2>
+            <picture>
+              <source media="(orientation: landscape)" srcset="./images/slide-img-04-16-9.webp" />
+
+              <img src="./images/slide-img-04-9-16.webp"
+                alt="Четырехпанельный комикс, иллюстрирующий, как разные люди воспринимают, структурируют, путают или реагируют на одну и ту же информацию и идеи."
+                class="slide-4-img" />
+            </picture>
+            <p class="text--medium">
+              В итоге хотим сказать: каждый человек — это отдельная личность.
+              Мы все по-своему уникальны, и у нас у всех есть собственное
+              понятие этого мира. Если мы что-то хотим донести окружающим, то
+              мы должны уметь подстроиться, чтобы все поняли нашу идею. Однако
+              не всем можно угодить: кто-то запомнит всё и сделает правильный
+              итог, а кто-то конченый дебил и соберет гоголь-моголь из того,
+              что из услышанного ему понравилось. Именно поэтому, дорогие
+              пользователи, просим вас: не тратьте, сука, силы на тех, кто вас
+              не хочет понимать, сосредоточьтесь на тех, кто вас реально
+              ценит.
+            </p>
           </div>
         </div>
-        <div class="hero__bottom">
-          <button class="btnPrev text--medium" id="btnPrev">Назад</button>
-          <button class="btnNext text--medium" id="btnNext">Далее</button>
-        </div>
-      </section>
-    </main>
-  </body>
+      </div>
+      <div class="hero__bottom">
+        <button class="btnPrev text--medium" id="btnPrev">Назад</button>
+        <button class="btnNext text--medium" id="btnNext">Далее</button>
+      </div>
+    </section>
+  </main>
+</body>
+
 </html>
