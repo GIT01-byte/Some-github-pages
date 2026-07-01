@@ -22,10 +22,10 @@ function countodownTimer() {
   const m = Math.floor((gap / 1000 / 60) % 60);
   const s = Math.floor((gap / 1000) % 60);
 
-  day.innerHTML = d
-  hrs.innerHTML = h
-  min.innerHTML = m
-  sec.innerHTML = s
+  day.innerHTML = d < 10 ? "0" + d : d;
+  hrs.innerHTML = h < 10 ? "0" + h : h;
+  min.innerHTML = m < 10 ? "0" + m : m;
+  sec.innerHTML = s < 10 ? "0" + s : s;
 }
 
 setInterval(countodownTimer, 1000);
