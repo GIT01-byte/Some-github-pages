@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+    <title>Камиль</title>
+    <style>
+        /* Базовые настройки */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* Фоновый градиент, похожий на тот, что на фото */
+            background: linear-gradient(180deg, #a4d5f9 0%, #7ab8e8 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #2c3e50;
+        }
+
+        /* Контейнер для всего контента */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        /* Заголовок */
+        h1 {
+            color: #1e3a8a;
+            /* Темно-синий цвет */
+            font-size: 42px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Красный бейдж */
+        .badge {
+            background-color: #ff4d4d;
+            /* Красный цвет */
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Белая карточка */
+        .card {
+            background-color: #f8fbff;
+            /* Слегка голубовато-белый */
+            width: 100%;
+            max-width: 650px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .card p {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Список со звездочками */
+        .card ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .card li::before {
+            content: "⭐";
+            /* Иконка звезды */
+            margin-right: 10px;
+            font-size: 14px;
+            margin-top: 2px;
+        }
+
+        /* Подвал */
+        .footer {
+            margin-top: 40px;
+            font-size: 13px;
+            color: #555;
+            text-align: center;
+        }
+
+        .footer .heart {
+            color: #ff4d4d;
+            font-size: 15px;
+        }
+
+        /* Адаптивность для телефонов */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 32px;
+            }
+
+            .card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Камиль</h1>
+        <div class="badge">Он просто красавчик!</div>
+
+        <div class="card">
+            <p>Камиль — тот самый человек, рядом с которым всё становится лучше. Он умеет поддержать, рассмешить и найти
+                выход даже там, где его, кажется, нет.</p>
+
+            <h2>Что делает его особенным:</h2>
+
+            <ul>
+                <li>Невероятная харизма и чувство юмора.</li>
+                <li>Всегда держит слово и помогает, когда это нужно.</li>
+                <li>Знает, как поднять настроение одной фразой.</li>
+                <li>В любой ситуации остаётся собой — и это круто.</li>
+            </ul>
+
+            <p>С ним легко говорить о важном и просто молчать. Он из тех людей, ради которых хочется становиться лучше.
+            </p>
+        </div>
+
+        <div class="footer">
+            Сайт создан с любовью к Камилю. <span class="heart">❤️</span>
+        </div>
+    </div>
+
+</body>
+
+</html>
