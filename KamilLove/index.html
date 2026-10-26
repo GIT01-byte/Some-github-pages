@@ -7,7 +7,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
-    <title>Камиль</title>
+    <title>Камиль | МпК Кс 26 1</title>
     <style>
         /* Базовые настройки */
         * {
@@ -18,59 +18,110 @@
         }
 
         body {
-            /* Фоновый градиент, похожий на тот, что на фото */
-            background: linear-gradient(180deg, #a4d5f9 0%, #7ab8e8 100%);
+            background-color: #a4d5f9;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* --- ГЛАВНЫЙ ЭКРАН С ДВУМЯ ФОТО --- */
+        .hero {
+            /* Фон главного экрана (можно сделать градиент или поставить свою фоновую картинку) */
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             min-height: 100vh;
+            /* Высота на весь экран */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-            color: #2c3e50;
+            text-align: center;
+            color: white;
+            padding: 40px 20px;
         }
 
-        /* Контейнер для всего контента */
-        .container {
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .badge {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(255, 77, 77, 0.4);
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+
+        /* Контейнер для двух фотографий */
+        .photo-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            /* Позволяет фото переноситься на новую строку на телефонах */
             width: 100%;
             max-width: 800px;
         }
 
-        /* Заголовок */
-        h1 {
-            color: #1e3a8a;
-            /* Темно-синий цвет */
-            font-size: 42px;
-            font-weight: 600;
-            margin-bottom: 10px;
+        /* Слот для одной фотографии */
+        .photo-slot {
+            width: 300px;
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 3px dashed rgba(255, 255, 255, 0.6);
+            /* Пунктирная рамка, чтобы было видно, куда вставлять */
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
         }
 
-        /* Красный бейдж */
-        .badge {
-            background-color: #ff4d4d;
-            /* Красный цвет */
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .photo-slot:hover {
+            transform: scale(1.02);
         }
 
-        /* Белая карточка */
+        /* Сама картинка внутри слота */
+        .photo-slot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Картинка заполняет весь слот, не искажаясь */
+            display: block;
+        }
+
+        /* Текст-заглушка, если картинка не загружена */
+        .photo-placeholder-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            font-weight: 500;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* --- ОСНОВНОЙ КОНТЕНТ --- */
+        .main-content {
+            background: linear-gradient(180deg, #a4d5f9 0%, #7ab8e8 100%);
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .card {
             background-color: #f8fbff;
-            /* Слегка голубовато-белый */
             width: 100%;
             max-width: 650px;
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-            font-size: 15px;
-            line-height: 1.6;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
         }
 
         .card p {
@@ -79,13 +130,12 @@
         }
 
         .card h2 {
-            font-size: 18px;
+            font-size: 20px;
             color: #2c3e50;
             margin-bottom: 15px;
             font-weight: 600;
         }
 
-        /* Список со звездочками */
         .card ul {
             list-style: none;
             margin-bottom: 20px;
@@ -99,32 +149,144 @@
 
         .card li::before {
             content: "⭐";
-            /* Иконка звезды */
             margin-right: 10px;
-            font-size: 14px;
+            font-size: 16px;
             margin-top: 2px;
+        }
+
+        /* --- ФОРМА ОБРАТНОЙ СВЯЗИ --- */
+        .form-container {
+            background-color: #f8fbff;
+            width: 100%;
+            max-width: 650px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            transition: border-color 0.3s;
+            background-color: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .form-group input[readonly] {
+            background-color: #eef2f6;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            background-color: #2563eb;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Сообщение об успехе */
+        .success-message {
+            display: none;
+            background-color: #d1fae5;
+            color: #065f46;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            border: 1px solid #34d399;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Подвал */
         .footer {
-            margin-top: 40px;
-            font-size: 13px;
-            color: #555;
             text-align: center;
+            padding-bottom: 30px;
+            font-size: 14px;
+            color: #444;
         }
 
         .footer .heart {
             color: #ff4d4d;
-            font-size: 15px;
+            font-size: 16px;
         }
 
         /* Адаптивность для телефонов */
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 32px;
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 42px;
             }
 
-            .card {
+            .photo-slot {
+                width: 100%;
+                max-width: 300px;
+                height: 350px;
+            }
+
+            .card,
+            .form-container {
                 padding: 25px;
             }
         }
@@ -133,10 +295,41 @@
 
 <body>
 
-    <div class="container">
+    <!-- ГЛАВНЫЙ ЭКРАН С ДВУМЯ ФОТО -->
+    <header class="hero">
         <h1>Камиль</h1>
         <div class="badge">Он просто красавчик!</div>
 
+        <!-- Контейнер для фотографий -->
+        <div class="photo-container">
+
+            <!-- Слот для ПЕРВОЙ фотографии -->
+            <div class="photo-slot">
+                <!-- Вставьте путь к вашей первой картинке в src -->
+                <img
+                    src="./photo_2026-10-20_14-46-34.jpg"
+                    alt="Фото Камиля 1"
+                >
+                <!-- Если картинки нет, будет отображаться этот текст (опционально) -->
+                <!-- <div class="photo-placeholder-text">Место для фото 1</div> -->
+            </div>
+
+            <!-- Слот для ВТОРОЙ фотографии -->
+            <div class="photo-slot">
+                <!-- Вставьте путь ко второй картинке в src -->
+                <img
+                    src="./photo_2026-10-26_13-36-08.jpg"
+                    alt="Фото Камиля 2"
+                >
+            </div>
+
+        </div>
+    </header>
+
+    <!-- ОСНОВНОЙ БЛОК -->
+    <div class="main-content">
+
+        <!-- Текст о Камиле -->
         <div class="card">
             <p>Камиль — тот самый человек, рядом с которым всё становится лучше. Он умеет поддержать, рассмешить и найти
                 выход даже там, где его, кажется, нет.</p>
@@ -154,10 +347,70 @@
             </p>
         </div>
 
+        <!-- ФОРМА ОБРАТНОЙ СВЯЗИ -->
+        <div class="form-container">
+            <h2>Написать сообщение</h2>
+
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя</label>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Введите ваше имя"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="group">Группа</label>
+                    <input
+                        type="text"
+                        id="group"
+                        value="МпК Кс 26 1"
+                        readonly
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Сообщение</label>
+                    <textarea
+                        id="message"
+                        placeholder="Напишите что-нибудь приятное..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >Отправить сообщение</button>
+            </form>
+
+            <!-- Блок, который появится после отправки -->
+            <div
+                id="successMessage"
+                class="success-message"
+            >
+                ✅ Сообщение успешно отправлено! Камиль обязательно его прочитает.
+            </div>
+        </div>
+
+        <!-- Подвал -->
         <div class="footer">
             Сайт создан с любовью к Камилю. <span class="heart">❤️</span>
         </div>
+
     </div>
+
+    <!-- СКРИПТ ДЛЯ ИМИТАЦИИ ОТПРАВКИ -->
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        });
+    </script>
 
 </body>
 
