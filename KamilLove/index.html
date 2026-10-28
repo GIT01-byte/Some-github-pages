@@ -25,10 +25,8 @@
 
         /* --- ГЛАВНЫЙ ЭКРАН С ДВУМЯ ФОТО --- */
         .hero {
-            /* Фон главного экрана (можно сделать градиент или поставить свою фоновую картинку) */
             background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
             min-height: 100vh;
-            /* Высота на весь экран */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -57,24 +55,20 @@
             margin-bottom: 40px;
         }
 
-        /* Контейнер для двух фотографий */
         .photo-container {
             display: flex;
             gap: 30px;
             justify-content: center;
             flex-wrap: wrap;
-            /* Позволяет фото переноситься на новую строку на телефонах */
             width: 100%;
             max-width: 800px;
         }
 
-        /* Слот для одной фотографии */
         .photo-slot {
             width: 300px;
             height: 400px;
             background-color: rgba(255, 255, 255, 0.1);
             border: 3px dashed rgba(255, 255, 255, 0.6);
-            /* Пунктирная рамка, чтобы было видно, куда вставлять */
             border-radius: 16px;
             overflow: hidden;
             display: flex;
@@ -87,16 +81,13 @@
             transform: scale(1.02);
         }
 
-        /* Сама картинка внутри слота */
         .photo-slot img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* Картинка заполняет весь слот, не искажаясь */
             display: block;
         }
 
-        /* Текст-заглушка, если картинка не загружена */
         .photo-placeholder-text {
             color: rgba(255, 255, 255, 0.7);
             font-size: 16px;
@@ -226,15 +217,20 @@
             transition: background-color 0.3s, transform 0.1s;
         }
 
-        .submit-btn:hover {
+        .submit-btn:hover:not(:disabled) {
             background-color: #2563eb;
         }
 
-        .submit-btn:active {
+        .submit-btn:active:not(:disabled) {
             transform: scale(0.98);
         }
 
-        /* Сообщение об успехе */
+        .submit-btn:disabled {
+            background-color: #93c5fd;
+            cursor: not-allowed;
+        }
+
+        /* Сообщение об успехе / ошибке */
         .success-message {
             display: none;
             background-color: #d1fae5;
@@ -245,6 +241,21 @@
             font-weight: 600;
             font-size: 16px;
             border: 1px solid #34d399;
+            animation: fadeIn 0.5s ease-in-out;
+            margin-top: 15px;
+        }
+
+        .error-message {
+            display: none;
+            background-color: #fee2e2;
+            color: #991b1b;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            border: 1px solid #f87171;
+            margin-top: 15px;
             animation: fadeIn 0.5s ease-in-out;
         }
 
@@ -300,36 +311,25 @@
         <h1>Камиль</h1>
         <div class="badge">Он просто красавчик!</div>
 
-        <!-- Контейнер для фотографий -->
         <div class="photo-container">
-
-            <!-- Слот для ПЕРВОЙ фотографии -->
             <div class="photo-slot">
-                <!-- Вставьте путь к вашей первой картинке в src -->
                 <img
-                    src="./photo_2026-10-20_14-46-34.jpg"
+                    src="./src/photo_2026-10-20_14-46-34.jpg"
                     alt="Фото Камиля 1"
                 >
-                <!-- Если картинки нет, будет отображаться этот текст (опционально) -->
-                <!-- <div class="photo-placeholder-text">Место для фото 1</div> -->
             </div>
-
-            <!-- Слот для ВТОРОЙ фотографии -->
             <div class="photo-slot">
-                <!-- Вставьте путь ко второй картинке в src -->
                 <img
-                    src="./photo_2026-10-26_13-36-08.jpg"
+                    src="./src/photo_2026-10-26_13-36-08.jpg"
                     alt="Фото Камиля 2"
                 >
             </div>
-
         </div>
     </header>
 
     <!-- ОСНОВНОЙ БЛОК -->
     <div class="main-content">
 
-        <!-- Текст о Камиле -->
         <div class="card">
             <p>Камиль — тот самый человек, рядом с которым всё становится лучше. Он умеет поддержать, рассмешить и найти
                 выход даже там, где его, кажется, нет.</p>
@@ -384,31 +384,118 @@
                 <button
                     type="submit"
                     class="submit-btn"
+                    id="submitBtn"
                 >Отправить сообщение</button>
             </form>
 
-            <!-- Блок, который появится после отправки -->
+            <!-- Блоки для ответа -->
             <div
                 id="successMessage"
                 class="success-message"
             >
                 ✅ Сообщение успешно отправлено! Камиль обязательно его прочитает.
             </div>
+            <div
+                id="errorMessage"
+                class="error-message"
+            >
+                ❌ Не удалось отправить. Попробуйте позже.
+            </div>
         </div>
 
-        <!-- Подвал -->
         <div class="footer">
             Сайт создан с любовью к Камилю. <span class="heart">❤️</span>
         </div>
 
     </div>
 
-    <!-- СКРИПТ ДЛЯ ИМИТАЦИИ ОТПРАВКИ -->
+    <!-- СКРИПТ ДЛЯ РЕАЛЬНОЙ ОТПРАВКИ В TELEGRAM -->
     <script>
-        document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+        document.getElementById('feedbackForm').addEventListener('submit', async function (event) {
             event.preventDefault();
-            this.style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
+
+            // 1. Получаем данные из формы
+            const name = document.getElementById('name').value.trim();
+            const group = document.getElementById('group').value;
+            const messageText = document.getElementById('message').value.trim();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+
+            // 2. Формируем текст сообщения
+            const text = `📩 <b>Новое сообщение с сайта!</b>\n\n👤 <b>Имя:</b> ${name}\n🎓 <b>Группа:</b> ${group}\n\n💬 <b>Сообщение:</b>\n${messageText}`;
+
+            // 3. НАСТРОЙКИ БОТА
+            const BOT_TOKEN = '8962757797:AAGMLq27M2oTo4RrW9VFkqoaEepFZbxqfa8';
+            const CHAT_ID = '6250684956';
+            const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+
+            // Подготовка интерфейса
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Отправка...';
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: text,
+                        parse_mode: 'HTML'
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.ok) {
+                    // УСПЕХ: Показываем сообщение, очищаем поля
+                    successMessage.style.display = 'block';
+                    document.getElementById('name').value = '';
+                    document.getElementById('message').value = '';
+
+                    // Прячем сообщение об успехе через 4 секунды
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 4000);
+
+                    // Кулдаун на кнопку (5 секунд), чтобы не спамили
+                    let timeLeft = 5;
+                    submitBtn.textContent = `Ждите ${timeLeft} сек...`;
+
+                    const timer = setInterval(() => {
+                        timeLeft--;
+                        submitBtn.textContent = `Ждите ${timeLeft} сек...`;
+
+                        if (timeLeft <= 0) {
+                            clearInterval(timer);
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Отправить сообщение';
+                        }
+                    }, 1000);
+
+                } else {
+                    // ОШИБКА ОТ TELEGRAM
+                    console.error('Telegram Error:', result.description);
+                    errorMessage.textContent = `❌ Ошибка: ${result.description}`;
+                    errorMessage.style.display = 'block';
+
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Отправить сообщение';
+                }
+            } catch (error) {
+                // СЕТЕВАЯ ОШИБКА
+                console.error('Network Error:', error);
+                errorMessage.textContent = '❌ Не удалось связаться с сервером. Проверьте интернет.';
+                errorMessage.style.display = 'block';
+
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Отправить сообщение';
+            }
         });
     </script>
 
